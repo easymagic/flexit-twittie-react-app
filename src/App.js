@@ -1,7 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+
+  const [a,b] = useState(10);
+  
+  const bindInc = ()=>{
+    return {
+      onClick:()=>b(a + 1)
+    };
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +27,7 @@ function App() {
         >
           Learn React
         </a>
+        <button {...bindInc()}>Inc {a}</button>
       </header>
     </div>
   );
