@@ -14,7 +14,7 @@ function App() {
 
   return (
       <>
-      <div className="container mx-auto bg-blue-100">
+      <div className="container mx-auto bg-blue-100 mt-3">
 
            <div className="bg-blue-500 p-2 flex justify-between">
              <div className="text-white font-bold">
