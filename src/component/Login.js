@@ -33,7 +33,7 @@ export const Login =()=>{
               </div>
 
               <div>
-                <input className="outline-none p-3" placeholder="Password" {...bindInput('password')}  />
+                <input type="password" className="outline-none p-3" placeholder="Password" {...bindInput('password')}  />
               </div>
 
               <div>

@@ -32,7 +32,7 @@ export const useDoLogin =()=>{
          sync({loading:true}); 
          api.store().then(({message,error,data})=>{
             sync({message,error,loading:false});
-            setLogged(data);
+            if (!error)setLogged(data);
          });
       }
   };
