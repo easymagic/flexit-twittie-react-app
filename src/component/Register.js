@@ -31,19 +31,19 @@ export const Register =()=>{
               </div>
 
               <div>
-                <input className="outline-none p-3" placeholder="Name" {...bindInput('name')}  />
+                <input className="outline-none p-3 w-full" placeholder="Name" {...bindInput('name')}  />
               </div>
 
               <div>
-                <input className="outline-none p-3" placeholder="Email" {...bindInput('email')}  />
+                <input className="outline-none p-3 w-full" placeholder="Email" {...bindInput('email')}  />
               </div>
 
               <div>
-                <input type="password" className="outline-none p-3" placeholder="Password" {...bindInput('password')}  />
+                <input type="password" className="outline-none p-3 w-full" placeholder="Password" {...bindInput('password')}  />
               </div>
 
               <div>
-                <input type="password" className="outline-none p-3" placeholder="Confirm Password" {...bindInput('password_confirmation')}  />
+                <input type="password" className="outline-none p-3 w-full" placeholder="Confirm Password" {...bindInput('password_confirmation')}  />
               </div>
 
 

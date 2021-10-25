@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AppContext } from "../component/AppContext";
 import { Api, useInput, useMessaging } from "../component/Config";
 
 
 export const useDoRegister =()=>{
  
-//   const {logged,setLogged} = useIsLogged();
+//   const {logged,setLogged} = useIsLogged();]
+const {setLogged} = useContext(AppContext);
   const {message,sync} = useMessaging();
   const {data,bindInput} = useInput();
   
@@ -18,8 +20,9 @@ export const useDoRegister =()=>{
 
          sync({loading:true}); 
          api.store().then(({message,error,data})=>{
-            sync({message,error,loading:false});
-            // setLogged(data);
+            sync({message,data,error,loading:false});
+            if (!error)
+            setLogged(data);
          });
       }
   };

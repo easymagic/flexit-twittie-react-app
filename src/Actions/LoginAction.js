@@ -1,14 +1,17 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AppContext } from "../component/AppContext";
 import { Api, useInput, useMessaging } from "../component/Config";
 
 export const useIsLogged =()=>{
    const [logged,setLogged] = useState(localStorage.getItem("auth"));
+   
 
    useEffect(()=>{
      
-     if (logged){
+    //  if (logged){
        localStorage.setItem('auth',logged);
-     }
+       console.log(logged);
+    //  }
 
    },[logged]);
 
@@ -17,7 +20,7 @@ export const useIsLogged =()=>{
 
 export const useDoLogin =()=>{
  
-  const {logged,setLogged} = useIsLogged();
+  const {logged,setLogged} = useContext(AppContext);
   const {message,sync} = useMessaging();
   const {data,bindInput} = useInput();
   
@@ -32,7 +35,7 @@ export const useDoLogin =()=>{
          sync({loading:true}); 
          api.store().then(({message,error,data})=>{
             sync({message,error,loading:false});
-            if (!error)setLogged(data);
+            if (!error)setLogged(JSON.stringify(data));
          });
       }
   };
