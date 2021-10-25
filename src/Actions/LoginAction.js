@@ -26,6 +26,9 @@ export const useDoLogin =()=>{
 
   const click = {
       onClick:()=>{
+         
+         api.setData(data);
+
          sync({loading:true}); 
          api.store().then(({message,error,data})=>{
             sync({message,error,loading:false});
