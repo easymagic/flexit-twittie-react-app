@@ -5,8 +5,8 @@ import { AppContext } from "./AppContext";
 export const GuestGuard =()=>{
   
     const {logged} = useContext(AppContext);
-
-    if (logged != 'null'){
+console.log(logged);
+    if (logged != null && logged != 'null'){
        return (<Redirect to="/tweet" />)
     }
 
