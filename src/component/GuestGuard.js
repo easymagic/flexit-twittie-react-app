@@ -10,4 +10,6 @@ export const GuestGuard =()=>{
        return (<Redirect to="/tweet" />)
     }
 
+    return (<></>);
+
 };

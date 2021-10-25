@@ -10,4 +10,6 @@ export const AuthGuard =()=>{
        return (<Redirect to="/" />)
     }
 
+    return (<></>);
+
 };
